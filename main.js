@@ -4,13 +4,13 @@ const outputDiv = document.querySelector("#output");
 businesses.filter(biz => biz.addressStateCode === "NY")
     .forEach(business => {
         // console.log("The businesses:", business)
-        outputDiv.innerHTML += 
-        `<h2>${business.companyName}</h2>
+        outputDiv.innerHTML +=
+            `<h2>${business.companyName}</h2>
         <address>${business.addressStateCode}</address>
         <hr>`
-});
+    });
 
-function showBusiness(business){
+function showBusiness(business) {
     return `<div>${business.companyName}</div>`
 }
 
@@ -40,7 +40,7 @@ console.log(firstCheapCandy)
 
 // REDUCE() ///////////////////
 
-const numbers= [1, 2, 3, 6, -2];
+const numbers = [1, 2, 3, 6, -2];
 const sum = numbers.reduce((accumulator, currentValue) => {
     return accumulator + currentValue;
 }, 0);
@@ -49,10 +49,24 @@ console.log("SUM", sum);
 
 // PRACTICE: BIG SPENDERS //////////////////////
 
-// const bigSpenders = businesses.filter(business => business.orders > 9000) 
-console.log(businesses)
+// Array to contain all the big spenders
 
-const words = ["hey", "hi", "go", "home", "mom", "dad", "love"]
+bigSpenders = [];
 
-const result = words.filter(word => word.length > 0 && word.length < 3);
-console.log(result);
+const filterFunction = function(order) {
+    if (order >= 9000) {
+        bigSpenders.push(order)
+    } else {
+        order === false;
+    }
+}
+
+const arrayFinder = businesses.filter(business => {
+    const allOrders = business.orders;
+    allOrders.forEach(order => filterFunction(order))
+});
+
+console.log(bigSpenders)
+
+// PRACTICE: SOLAR SYSTEM /////////////////////////
+
