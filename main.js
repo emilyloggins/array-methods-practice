@@ -68,5 +68,14 @@ const arrayFinder = businesses.filter(business => {
 
 console.log(bigSpenders)
 
-// PRACTICE: SOLAR SYSTEM /////////////////////////
+// LIGHTENING EXERCISE /////////////////////////
+// Write a function that will accept any string and return the number of vowels. Start with simple console logs.
 
+const string = "I pledge of allegiance to the flag";
+
+function vowelCount(str) {
+    var m = str.match(/[aeiou]/gi);
+    console.log(m)
+}
+
+vowelCount(string);
